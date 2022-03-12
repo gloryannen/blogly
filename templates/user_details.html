@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}User details{% endblock %}
+{% block content %}
+
+<h2 class="col-12">{{user.full_name}} Details</h2>
+<div class="row-4 mx-auto">
+  <ul class="row list-group">
+    <li class="list-group-item">ID: {{user.id}}</li>
+    <li class="list-group-item">First Name: {{user.first_name}}</li>
+    <li class="list-group-item">Last Name: {{user.last_name}}</li>
+    <li class="list-group-item">Image:
+      <br>
+      <img width="300px'" src="{{user.image_url}}">
+    </li>
+  </ul>
+  <a class="btn btn-primary mt-3 col-mb-12" href="/users/{{user.id}}/edit">Edit User</a>
+  <a class="btn btn-danger mt-3 col-mb-12" href="/users/{{user.id}}/delete">Delete User</a>
+</div>
+
+
+{% endblock %}

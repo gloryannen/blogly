@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}List of Users{% endblock %}
+{% block content %}
+
+<h2 class="col-12">Users</h2>
+<div class="row-6 mx-auto flex-wrap">
+  <ul class="list-group list-group-horizontal">
+    {% for user in users %}
+    <li class="col-mb-6 list-group-item">
+      <a href="/users/{{user.id}}">{{user.full_name}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <a class="btn btn-primary mt-3" href="/users/new">Add new user</a>
+</div>
+
+{% endblock %}

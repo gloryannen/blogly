@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}New User Form{% endblock %}
+{% block content %}
+
+<h2 class="col-12">Create a user</h2>
+<form action="/users/new" method="POST" class="row-4 mx-auto">
+    <div class="col-mb-6 form-group">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" name="first_name" class="form-control" required>
+    </div>
+    <div class="col-mb-6 form-group">
+      <label for="last_name" class="form-label">Last Name</label>
+      <input type="text" name="last_name" class="form-control" required>
+    </div>
+    <div class="col-mb-6 form-group">
+      <label for="image_url" class="form-label">Image(url)</label>
+      <input type="url" name="image_url" class="form-control">
+    </div>
+    <button class="btn btn-primary mt-3">Add</button>
+  </div>
+</form>
+
+{% endblock %}
