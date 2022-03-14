@@ -49,7 +49,7 @@ class UserViewsTestCase(TestCase):
             html = resp.get_data(as_text=True)
 
             self.assertEqual(resp.status_code, 200)
-            self.assertIn('<h2>TestUser Doe Details</h2>', html)
+            self.assertIn('<h2 class="display-2 col-12">TestUser Doe Details</h2>', html)
             self.assertIn(self.test_user.first_name, html)
 
 
@@ -60,7 +60,7 @@ class UserViewsTestCase(TestCase):
             html = resp.get_data(as_text=True)
 
             self.assertEqual(resp.status_code, 200)
-            self.assertIn("<h2>TestUser2 Doug Details</h2>", html)
+            self.assertIn('<h2 class="display-2 col-12">TestUser2 Doug Details</h2>', html)
 
 
 

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Post Details{% endblock %}
+{% block content %}
+
+<h2 class="display-2 col-12">{{post.user_id.first_name}} Details</h2>
+<div class="row mx-auto">
+  <div class="container border rounded text-start col-mb-12 px-0">
+    <h3 class="border-bottom px-2">Post Title: {{post.title}}</h3>
+    <p class="px-2">Post Content: {{post.content}}</p>
+    <p class="px-2">Created On: {{post.formatted_datetime}}</p>
+  </div>
+  <div class="row-6">
+    <a class="btn btn-outline-primary mt-3 col-mb-4" href="/users/{{post.user_id}}">Cancel</a>
+    <a class="btn btn-primary mt-3 col-mb-4" href="/posts/{{post.id}}/edit">Edit</a>
+    <a class="btn btn-danger mt-3 col-mb-4" href="/posts/{{post.id}}/delete">Delete</a>
+  </div>
+</div>
+
+{% endblock %}
