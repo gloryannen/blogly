@@ -8,11 +8,21 @@
     <h3 class="border-bottom px-2">Post Title: {{post.title}}</h3>
     <p class="px-2">Post Content: {{post.content}}</p>
     <p class="px-2">Created On: {{post.formatted_datetime}}</p>
+
+    {% for tag in post.tags %}
+    <li class="col-mb-6 list-group-item">
+      <a href="/tags/{{tag.id}}" class="btn btn-sm btn-warning">{{tag.name}}</a>
+    </li>
+    {% endfor %}
   </div>
+
   <div class="row-6">
-    <a class="btn btn-outline-primary mt-3 col-mb-4" href="/users/{{post.user_id}}">Cancel</a>
-    <a class="btn btn-primary mt-3 col-mb-4" href="/posts/{{post.id}}/edit">Edit</a>
-    <a class="btn btn-danger mt-3 col-mb-4" href="/posts/{{post.id}}/delete">Delete</a>
+    <form>
+      <button formmethod="GET" class="btn btn-outline-primary mt-3 col-mb-4" formaction="/users/{{post.user_id}}">Cancel</button>
+      <button formmethod="GET" class="btn btn-primary mt-3 col-mb-4" formaction="/posts/{{post.id}}/edit">Edit</button>
+      <button formmethod="POST" class="btn btn-danger mt-3 col-mb-4" formaction="/posts/{{post.id}}/delete">Delete</button>
+    </form>
+  </div>
   </div>
 </div>
 

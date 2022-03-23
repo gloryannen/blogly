@@ -4,20 +4,25 @@
 
 <h2 class="display-2 col-12">Edit Profile</h2>
 <form action="" method="POST" class="row-4 mx-auto">
+
   <div class="col-mb-6 form-group">
     <label for="first_name" class="form-label">First Name</label>
     <input type="text" name="first_name" class="form-control">
   </div>
+
   <div class="col-mb-6 form-group">
     <label for="last_name" class="form-label">Last Name</label>
     <input type="text" name="last_name" class="form-control">
   </div>
+
   <div class="col-mb-6 form-group">
     <label for="image_url" class="form-label">Image(url)</label>
     <input type="url" name="image_url" class="form-control">
   </div>
+
   <button class="btn btn-success col-lg-mb mt-3">Save</button>
   <a class="btn btn-outline-primary col-mb-12 mt-3" href="/users/{{user.id}}">Cancel</a>
+
 </form>
 
 {% endblock %}

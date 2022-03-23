@@ -3,7 +3,9 @@
 {% block content %}
 
 <h2 class="display-2 col-12">Add Post</h2>
-<form action="/users/{{user.id}}/posts/new" method="POST" class="row-4 mx-auto">
+<div class="row-mb-8 mx-auto">
+
+  <form method="POST" class="row-4 mx-auto">
 
     <div class="col-mb-6 form-group">
       <label for="title" class="form-label">Title</label>
@@ -15,8 +17,27 @@
       <textarea name="content" class="form-control" required></textarea>
     </div>
 
-    <button class="btn btn-success col-lg-mb mt-3">Add</button>
+    <div class="row-mb-6 mx-auto mt-3">
+      <ul class="list-group list-group horizontal">
+        {% for tag in tags %}
+        <li class="col-sm list-group-item">
+          <input
+          class="form-check-input me-1"
+          type="checkbox"
+          name="tags"
+          value="{{tag.id}}"
+          id="tag_{{tag.id}}"
+          aria-label="Checkbox for tags">{{tag.name}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <button type="submit" class="btn btn-success col-lg-mb mt-3">Add</button>
     <a class="btn btn-outline-primary col-mb-12 mt-3" href="/users/{{user.id}}">Cancel</a>
-</form>
+
+ </form>
+</div>
+
 
 {% endblock %}

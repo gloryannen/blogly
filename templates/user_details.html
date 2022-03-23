@@ -19,7 +19,7 @@
 
 <h3 class="display-3 mt-4">Posts</h3>
   <ul class="col list-group">
-    {% for post in user_post%}
+    {% for post in user.posts %}
     <li class="list-group-item">
       <a href="/posts/{{post.id}}">{{post.title}}</a>
     </li>
